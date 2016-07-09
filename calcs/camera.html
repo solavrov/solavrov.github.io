@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Camera calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            body {
+                background: #cdcdc0;
+            }
+
+            td {
+                white-space: nowrap;
+                font-family: calibri;
+            }
+            
+            td.right {
+                white-space: nowrap;
+                font-family: calibri;
+                white-space: nowrap;
+                text-align: right;
+            }
+
+            p {
+                font-family: calibri;
+            }
+
+            h1 {
+                font-family: science;
+                font-size:150%;
+            }
+            
+            input {
+                background-color: lightgrey;
+                text-align: right;
+            }
+            
+            select {
+                background-color: lightgrey;
+            }
+
+            @font-face { 
+                font-family: gta; src: url('../fonts/pricedown.ttf');
+                font-family: calibri; src: url('../fonts/calibrib.ttf');
+                font-family: science; src: url('../fonts/science.ttf');
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <h1><b>Camera performance calculator</b></h1>
+
+        <hr>
+
+        <p><b>Input</b></p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Circle_of_confusion">CoC for full frame (c)</a></td>
+                    <td>= <input id="coc" size="6" value="0.03"></td>
+                    <td>mm</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/F-number">Aperture f-number (N)</a></td>
+                    <td>= <input id="aperture" size="6"></td>
+                    <td align="center">or</td>
+                    <td>
+                        <select id="fnum">
+                            <option>select</option>
+                            <option>1.1</option>
+                            <option>1.2</option>
+                            <option>1.4</option>
+                            <option>1.6</option>
+                            <option>1.8</option>
+                            <option>2</option>
+                            <option>2.2</option>
+                            <option>2.5</option>
+                            <option>2.8</option>
+                            <option>3.2</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                            <option>5.6</option>
+                            <option>6.3</option>
+                            <option>7.1</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>16</option>
+                            <option>18</option>
+                            <option>20</option>
+                            <option>22</option>
+                            <option>25</option>
+                            <option>29</option>
+                            <option>32</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Focal_length">Actual focal length (f)</a></td>
+                    <td>= <input id="focal" size="6"></td>
+                    <td>mm,</td>
+                    <td><a href="https://en.wikipedia.org/wiki/35_mm_equivalent_focal_length">equivalent</a> = <span id="eqv" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Crop_factor">Crop factor (CF)</a></td>
+                    <td>= <input id="crop" size="6"></td>
+                    <td align="center">or</td>
+                    <td>
+                        <select id="sensor">
+                            <option>select sensor</option>
+                            <option>1/10"</option>
+                            <option>1/8"</option>
+                            <option>1/6"</option>
+                            <option>1/4"</option>
+                            <option>1/3.6"</option>
+                            <option>1/3.2"</option>
+                            <option>1/3"</option>
+                            <option>1/2.7"</option>
+                            <option>1/2.5"</option>
+                            <option>1/2.3"</option>
+                            <option>1/2"</option>
+                            <option>1/1.8"</option>
+                            <option>1/1.7"</option>
+                            <option>1/1.6"</option>
+                            <option>2/3"</option>
+                            <option>1/1.2"</option>
+                            <option>1"</option>
+                            <option>4/3"</option>
+                            <option>1.5"</option>
+                            <option>Canon APS-C</option>
+                            <option>APS-C</option>
+                            <option>APS-H</option>
+                            <option>Full-frame</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Pixel#Megapixel">Sensor megapixel (M)</a></td>
+                    <td>= <input id="megapixel" size="6"></td>
+                    <td>mp,</td>
+                    <td>pixel size = <span id="pixel" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td>Object distance (s)</td>
+                    <td>= <input id="distance" size="6"></td>
+                    <td>m</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Object size (L)</td>
+                    <td>= <input id="size" size="6"></td>
+                    <td>m</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="right"><button id="calc">Calculate</button></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <p><b><a href="https://en.wikipedia.org/wiki/Depth_of_field">Depth of field performance</a></b></p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>Hyperfocal distance = f+f<sup>2</sup>/(N·c) = <span id="hyper" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td>Near limit of DOF = (s·f<sup>2</sup>)/(f<sup>2</sup>+N·c·(s-f)) = <span id="dn" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td>Far limit of DOF (D<sub>F</sub>) = (s·f<sup>2</sup>)/(f<sup>2</sup>-N·c·(s-f)) = <span id="df" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td>Obvious background blur = D<sub>F</sub>(c=0.2mm) = <span id="blur" style="color: blue"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <p><b><a href="https://en.wikipedia.org/wiki/Image_sensor_format#Shot_noise">Low light performance</a></b></p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>Benchmark camera:
+                        N<sub>0</sub>=<input id="n0" size="1" value="2">,
+                        CF<sub>0</sub>=<input id="cf0" size="2" value="4.55">,
+                        M<sub>0</sub>=<input id="m0" size="1" value="10">,
+                        exposition t<sub>0</sub>=<input id="t0" size="2" value="0.1"> sec,</td>
+                </tr>
+                <tr>
+                    <td>your exposition &asymp; (N/N<sub>0</sub>)<sup>2</sup>·(CF/CF<sub>0</sub>)<sup>2</sup>·(M/M<sub>0</sub>)·t<sub>0</sub> = <span id="expo" style="color: blue"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <p><b><a href="https://en.wikipedia.org/wiki/Angle_of_view">Field of view performance</a></b></p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>Horizontal FOV = 2·atan((<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">36mm</a>/CF)/(2·f)) =
+                        <span id="hfov" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td>Vertical FOV = 2·atan((<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">24mm</a>/CF)/(2·f)) = <span id="vfov" style="color: blue"></span></td>
+                </tr>
+                <tr>
+                    <td>Object angle of view = 2·atan(L/(2·s)) = <span id="angle" style="color: blue"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <script src="../scripts/main.js"></script>
+
+    </body>
+
+</html>
