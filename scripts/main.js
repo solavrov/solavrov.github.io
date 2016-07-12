@@ -18,7 +18,7 @@ var calcButton = document.getElementById("calc");
 var hyperOutput = document.getElementById("hyper");
 var dnOutput = document.getElementById("dn");
 var dfOutput = document.getElementById("df");
-var blurOutput = document.getElementById("blur");
+//var blurOutput = document.getElementById("blur");
 var expoOutput = document.getElementById("expo");
 var eqvOutput = document.getElementById("eqv");
 var pixelOutput = document.getElementById("pixel");
@@ -26,7 +26,7 @@ var hfovOutput = document.getElementById("hfov");
 var vfovOutput = document.getElementById("vfov");
 var angleOutput = document.getElementById("angle");
 
-var BLUR_COC = 0.2; //mm
+//var BLUR_COC = 0.2; //mm
 var FF_SQUARE = 864; //mm2
 var FF_LENGTH = 36; //mm
 var FF_HIGHT = 24; //mm
@@ -232,7 +232,7 @@ function setDof() {
 
     var dn = near(coc, aperture, focal, crop, distance);
     var df = far(coc, aperture, focal, crop, distance);
-    var blur = far(BLUR_COC, aperture, focal, crop, distance);
+//    var blur = far(BLUR_COC, aperture, focal, crop, distance);
 
     if (!isNaN(dn)) {
 
@@ -247,19 +247,19 @@ function setDof() {
             dfOutput.innerHTML = Math.round(df * 100) / 100 + "m";
         }
 
-        if (blur < 0) {
-            blurOutput.innerHTML = "infinity";
-        } else if (dn >= df) {
-            blurOutput.innerHTML ="out of focus";
-        } else {
-            blurOutput.innerHTML = Math.round(blur * 100) / 100 + "m";
-        }
-
-    } else {
-        dnOutput.innerHTML = "";
-        dfOutput.innerHTML = "";
-        blurOutput.innerHTML = "";
-    }
+//        if (blur < 0) {
+//            blurOutput.innerHTML = "infinity";
+//        } else if (dn >= df) {
+//            blurOutput.innerHTML ="out of focus";
+//        } else {
+//            blurOutput.innerHTML = Math.round(blur * 100) / 100 + "m";
+//        }
+//
+//    } else {
+//        dnOutput.innerHTML = "";
+//        dfOutput.innerHTML = "";
+//        blurOutput.innerHTML = "";
+//    }
 
 }
 
