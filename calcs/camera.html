@@ -21,8 +21,13 @@
             td.right {
                 white-space: nowrap;
                 font-family: calibri;
-                white-space: nowrap;
                 text-align: right;
+            }
+            
+            td.center {
+                white-space: nowrap;
+                font-family: calibri;
+                text-align: center;
             }
 
             p {
@@ -151,16 +156,16 @@
                     <td><a href="https://en.wikipedia.org/wiki/Pixel#Megapixel">Sensor megapixel (M)</a></td>
                     <td>= <input id="megapixel" size="6"></td>
                     <td>mp,</td>
-                    <td>pixel size = <span id="pixel" style="color: blue"></span></td>
+                    <td>pixel size (p) = <span id="pixel" style="color: blue"></span></td>
                 </tr>
                 <tr>
-                    <td>Object distance (s)</td>
+                    <td>Subject distance (s)</td>
                     <td>= <input id="distance" size="6"></td>
                     <td>m</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Object size (L)</td>
+                    <td>Subject size (L)</td>
                     <td>= <input id="size" size="6"></td>
                     <td>m</td>
                     <td></td>
@@ -187,7 +192,7 @@
                     <td>Near limit of DOF = (s·f<sup>2</sup>)/(f<sup>2</sup>+N·c·(s-f)) = <span id="dn" style="color: blue"></span></td>
                 </tr>
                 <tr>
-                    <td>Far limit of DOF (D<sub>F</sub>) = (s·f<sup>2</sup>)/(f<sup>2</sup>-N·c·(s-f)) = <span id="df" style="color: blue"></span></td>
+                    <td>Far limit of DOF = (s·f<sup>2</sup>)/(f<sup>2</sup>-N·c·(s-f)) = <span id="df" style="color: blue"></span></td>
                 </tr>
 <!--                <tr>
                     <td>Obvious background blur = D<sub>F</sub>(c=0.2mm) = <span id="blur" style="color: blue"></span></td>
@@ -202,15 +207,24 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Benchmark camera:
+                    <td>Benchmark camera specs and exposition:</td>
+                </tr>
+                <tr>
+                    <td>
                         N<sub>0</sub>=<input id="n0" size="1" value="2">,
                         CF<sub>0</sub>=<input id="cf0" size="2" value="4.55">,
                         M<sub>0</sub>=<input id="m0" size="1" value="10">,
-                        exposition t<sub>0</sub>=<input id="t0" size="2" value="0.1"> sec,</td>
+                        exposition t<sub>0</sub>=<input id="t0" size="2" value="0.1"> sec.
+                    </td>
+                </tr>
+                <tr><td class="center">&dArr;</td></tr>
+                <tr>
+                    <td>Your exposition (ignoring dark and read noises)</td>
                 </tr>
                 <tr>
-                    <td>your exposition &asymp; (N/N<sub>0</sub>)<sup>2</sup>·(CF/CF<sub>0</sub>)<sup>2</sup>·(M/M<sub>0</sub>)·t<sub>0</sub> = <span id="expo" style="color: blue"></span></td>
+                    <td>t &asymp; (N/N<sub>0</sub>)<sup>2</sup>·(CF/CF<sub>0</sub>)<sup>2</sup>·(M/M<sub>0</sub>)·t<sub>0</sub> = (N/N<sub>0</sub>)<sup>2</sup>·(p<sub>0</sub>/p)<sup>2</sup>·t<sub>0</sub> = <span id="expo" style="color: blue"></span></td>
                 </tr>
+                
             </tbody>
         </table>
 
@@ -228,7 +242,7 @@
                     <td>Vertical FOV = 2·atan((<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">24mm</a>/CF)/(2·f)) = <span id="vfov" style="color: blue"></span></td>
                 </tr>
                 <tr>
-                    <td>Object angle of view = 2·atan(L/(2·s)) = <span id="angle" style="color: blue"></span></td>
+                    <td>Subject angle of view = 2·atan(L/(2·s)) = <span id="angle" style="color: blue"></span></td>
                 </tr>
             </tbody>
         </table>
