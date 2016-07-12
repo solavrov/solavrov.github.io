@@ -254,12 +254,12 @@ function setDof() {
 //        } else {
 //            blurOutput.innerHTML = Math.round(blur * 100) / 100 + "m";
 //        }
-//
-//    } else {
-//        dnOutput.innerHTML = "";
-//        dfOutput.innerHTML = "";
-//        blurOutput.innerHTML = "";
-//    }
+
+    } else {
+        dnOutput.innerHTML = "";
+        dfOutput.innerHTML = "";
+        blurOutput.innerHTML = "";
+    }
 
 }
 
