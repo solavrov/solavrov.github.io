@@ -258,7 +258,7 @@ function setDof() {
     } else {
         dnOutput.innerHTML = "";
         dfOutput.innerHTML = "";
-        blurOutput.innerHTML = "";
+//        blurOutput.innerHTML = "";
     }
 
 }
