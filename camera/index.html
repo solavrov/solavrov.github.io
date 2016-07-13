@@ -68,13 +68,13 @@
         <table>
             <tbody>
                 <tr>
-                    <td><a href="https://en.wikipedia.org/wiki/Circle_of_confusion">CoC for full frame (c)</a></td>
+                    <td><a href="https://en.wikipedia.org/wiki/Circle_of_confusion">CoC for full frame</a> (c)</td>
                     <td>= <input id="coc" size="6" value="0.03"></td>
                     <td>mm</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><a href="https://en.wikipedia.org/wiki/F-number">Aperture f-number (N)</a></td>
+                    <td><a href="https://en.wikipedia.org/wiki/F-number">Aperture f-number</a> (N)</td>
                     <td>= <input id="aperture" size="6"></td>
                     <td align="center">or</td>
                     <td>
@@ -114,13 +114,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="https://en.wikipedia.org/wiki/Focal_length">Actual focal length (f)</a></td>
+                    <td><a href="https://en.wikipedia.org/wiki/Focal_length">Actual focal length</a> (f)</td>
                     <td>= <input id="focal" size="6"></td>
                     <td>mm,</td>
-                    <td><a href="https://en.wikipedia.org/wiki/35_mm_equivalent_focal_length">equivalent</a> = <span id="eqv" style="color: blue"></span></td>
+                    <td><a href="https://en.wikipedia.org/wiki/35_mm_equivalent_focal_length">equivalent</a> (f<sub>e</sub>) = <span id="eqv" style="color: blue"></span></td>
                 </tr>
                 <tr>
-                    <td><a href="https://en.wikipedia.org/wiki/Crop_factor">Crop factor (CF)</a></td>
+                    <td><a href="https://en.wikipedia.org/wiki/Crop_factor">Crop factor</a> (CF)</td>
                     <td>= <input id="crop" size="6"></td>
                     <td align="center">or</td>
                     <td>
@@ -153,7 +153,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="https://en.wikipedia.org/wiki/Pixel#Megapixel">Sensor megapixel (M)</a></td>
+                    <td><a href="https://en.wikipedia.org/wiki/Pixel#Megapixel">Sensor megapixel</a> (M)</td>
                     <td>= <input id="megapixel" size="6"></td>
                     <td>mp,</td>
                     <td>pixel size (p) = <span id="pixel" style="color: blue"></span></td>
@@ -222,7 +222,7 @@
                     <td>Your exposition (ignoring dark and read noises)</td>
                 </tr>
                 <tr>
-                    <td>t &asymp; (N/N<sub>0</sub>)<sup>2</sup>·(CF/CF<sub>0</sub>)<sup>2</sup>·(M/M<sub>0</sub>)·t<sub>0</sub> = (N/N<sub>0</sub>)<sup>2</sup>·(p<sub>0</sub>/p)<sup>2</sup>·t<sub>0</sub> = <span id="expo" style="color: blue"></span></td>
+                    <td>t &asymp; (N/N<sub>0</sub>)<sup>2</sup>·(p<sub>0</sub>/p)<sup>2</sup>·t<sub>0</sub> = (N/N<sub>0</sub>)<sup>2</sup>·(CF/CF<sub>0</sub>)<sup>2</sup>·(M/M<sub>0</sub>)·t<sub>0</sub> = <span id="expo" style="color: blue"></span></td>
                 </tr>
                 
             </tbody>
@@ -235,11 +235,11 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Horizontal FOV = 2·atan((<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">36mm</a>/CF)/(2·f)) =
+                    <td>Horizontal FOV = 2·atan(<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">36mm</a>/(2·f<sub>e</sub>)) =
                         <span id="hfov" style="color: blue"></span></td>
                 </tr>
                 <tr>
-                    <td>Vertical FOV = 2·atan((<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">24mm</a>/CF)/(2·f)) = <span id="vfov" style="color: blue"></span></td>
+                    <td>Vertical FOV = 2·atan(<a href="https://en.wikipedia.org/wiki/Full-frame_digital_SLR">24mm</a>/(2·f<sub>e</sub>)) = <span id="vfov" style="color: blue"></span></td>
                 </tr>
                 <tr>
                     <td>Subject angle of view = 2·atan(L/(2·s)) = <span id="angle" style="color: blue"></span></td>
